@@ -14,6 +14,10 @@ var apis = {
         title: 'OVH API Cloud',
         url: 'https://api.ovh.com/1.0/cloud.json'
     },
+    chaindrive_lab : {
+        title: 'ACC-001 - Chaindrive API Lab',
+        url: 'http://69.70.132.74:50003/wsdl/IWebImportExportAPI'
+    }
 };
 
 //Replace this with your status page project name
