@@ -3,8 +3,8 @@
 //to host this site in the same domain as your API (and set `document.domain` correspondingly)
 var apis = {
     github : {
-        title: 'Github Public API (not our own but we couldnt live without it)',
-        url: 'https://api.github.com/users' //replace this with your own API endpoints
+        title: 'Github Public API',
+        url: 'https://api.github.com'
     },
     heroku : {
         title: 'Heroku Status API',
@@ -15,7 +15,7 @@ var apis = {
         url: 'https://api.ovh.com/1.0/cloud.json'
     },
     chaindrive_lab : {
-        title: 'ACC-001 - Chaindrive API Lab',
+        title: 'ACC-001 - Chaindrive SOAP API Lab',
         url: 'http://69.70.132.74:50003/wsdl/IWebImportExportAPI'
     }
 };
@@ -143,6 +143,7 @@ var StatusList = React.createClass({
             $.get({
                 url : site.url,
                 crossDomain : true,//make sure to allow cross-origin requests for the relevant endpoint
+                crossOrigin: true,
                 timeout : site.timeout || 3000,
                 success : markAsSuccessful.bind(this,key),
                 error: markAsFailed.bind(this,key)
